@@ -1,0 +1,15 @@
+适用于 Windows Terminal 的终端页面，先运行 chcp 看当前代码页。
+
+chcp 为 65001 的 PowerShell：
+gcc -std=c11 -Wall -Wextra -pedantic -O2 main.c library.c book_io.c DoubleLinkedList.c -o books.exe; if ($LASTEXITCODE -eq 0) { .\books.exe }
+
+chcp 为 65001 的 Cmd：
+gcc -std=c11 -Wall -Wextra -pedantic -O2 main.c library.c book_io.c DoubleLinkedList.c -o books.exe && .\books.exe
+
+chcp 为 936 的 PowerShell：
+gcc -std=c11 -Wall -Wextra -pedantic -O2 -fexec-charset=GBK main.c library.c book_io.c DoubleLinkedList.c -o books.exe; if ($LASTEXITCODE -eq 0) { .\books.exe }
+
+chcp 为 936 的 Cmd：
+gcc -std=c11 -Wall -Wextra -pedantic -O2 -fexec-charset=GBK main.c library.c book_io.c DoubleLinkedList.c -o books.exe && .\books.exe
+
+双击打开的老式 cmd 窗口（即旧版控制台窗口 conhost.exe）对 UTF-8 的支持存在底层缺陷（GBK 正常）。若想使用 UTF-8 请改用 Windows Terminal 或 VSCode 自带终端。
